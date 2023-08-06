@@ -1,7 +1,7 @@
 import "./App.css";
 import { useSelector, useDispatch } from "react-redux";
 import { bindActionCreators } from "redux";
-import { actions } from "./state/index";
+import { accountActions } from "./state/index";
 import { accountReducer } from "./state/reducers/account";
 
 function App() {
@@ -10,7 +10,10 @@ function App() {
   });
 
   const dispatch = useDispatch();
-  const { depositMoney, withdrawMoney } = bindActionCreators(actions, dispatch);
+  const { depositMoney, withdrawMoney } = bindActionCreators(
+    accountActions,
+    dispatch
+  );
 
   return (
     <div className="App">
